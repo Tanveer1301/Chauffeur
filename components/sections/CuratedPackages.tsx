@@ -37,11 +37,11 @@ export const CuratedPackages: React.FC = () => {
               className="bg-white border border-gray-300 hover:border-black p-6 transition-all duration-200 shadow-sm flex flex-col justify-between"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-[9px] bg-black text-white font-extrabold px-2.5 py-0.5 uppercase tracking-wider">
+                <div className="flex items-center justify-between gap-2 border-b border-gray-100 pb-3">
+                  <span className="text-[10px] bg-black text-[#C5A059] font-extrabold px-2.5 py-1 uppercase tracking-wider whitespace-nowrap border border-[#C5A059]/40">
                     {pkg.badge}
                   </span>
-                  <span className="font-mono text-xs font-bold text-gray-500">
+                  <span className="font-mono text-xs font-extrabold text-gray-700 shrink-0 bg-gray-100 px-2 py-0.5 border border-gray-200">
                     {pkg.durationHours} Hours
                   </span>
                 </div>

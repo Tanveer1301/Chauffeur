@@ -23,22 +23,16 @@ export const FleetDetailModal: React.FC<FleetDetailModalProps> = ({ tier, isOpen
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-3xl bg-white border border-gray-300 shadow-2xl overflow-hidden my-8 text-black">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 pt-20 pb-10 bg-black/75 backdrop-blur-sm overflow-y-auto">
+      <div className="relative w-full max-w-3xl bg-white border border-gray-300 shadow-2xl overflow-hidden my-auto text-black">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50 sticky top-0 z-10">
           <div className="flex items-center space-x-2">
-            <Sparkles className="w-5 h-5 text-[#C5A059]" />
-            <span className="font-extrabold text-sm tracking-[0.2em] uppercase text-black">
+            <Sparkles className="w-4 h-4 text-[#C5A059]" />
+            <span className="font-extrabold text-xs tracking-[0.15em] uppercase text-black">
               VEHICLE SPECIFICATIONS & AMENITIES
             </span>
           </div>
-          <button
-            onClick={onClose}
-            className="p-1 text-gray-500 hover:text-black transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
         </div>
 
         <div className="p-6 sm:p-8 space-y-6">
@@ -113,9 +107,12 @@ export const FleetDetailModal: React.FC<FleetDetailModalProps> = ({ tier, isOpen
 
           {/* Action CTA */}
           <div className="pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-xs text-gray-500">
-              Instant dispatch available across Manhattan, JFK, LGA, EWR, and TEB FBOs.
-            </div>
+            <button
+              onClick={onClose}
+              className="w-full sm:w-auto px-6 py-3 bg-gray-100 text-black border border-gray-300 font-extrabold text-xs uppercase tracking-wider hover:bg-gray-200 transition-colors"
+            >
+              ← BACK TO VEHICLES
+            </button>
 
             <button
               onClick={handleBookNow}

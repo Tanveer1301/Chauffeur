@@ -55,25 +55,16 @@ export const CheckoutModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-white border border-gray-300 shadow-2xl overflow-hidden text-black my-8">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 pt-20 pb-10 bg-black/75 backdrop-blur-sm overflow-y-auto">
+      <div className="relative w-full max-w-2xl bg-white border border-gray-300 shadow-2xl overflow-hidden text-black my-auto">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50 sticky top-0 z-10">
           <div className="flex items-center space-x-2">
             <ShieldCheck className="w-5 h-5 text-[#C5A059]" />
-            <h3 className="text-base font-extrabold text-black tracking-wider uppercase">
+            <h3 className="text-sm font-extrabold text-black tracking-wider uppercase">
               {isSuccess ? 'RESERVATION CONFIRMED' : 'SECURE VIP CHECKOUT'}
             </h3>
           </div>
-          <button
-            onClick={() => {
-              setCheckoutOpen(false);
-              setIsSuccess(false);
-            }}
-            className="text-gray-500 hover:text-black transition-colors p-1"
-          >
-            <X className="w-5 h-5" />
-          </button>
         </div>
 
         {!isSuccess ? (
@@ -224,20 +215,31 @@ export const CheckoutModal: React.FC = () => {
               </div>
             )}
 
-            <button
-              disabled={isProcessing}
-              onClick={handleConfirmPayment}
-              className="w-full py-4 bg-black text-white font-extrabold text-xs uppercase tracking-[0.2em] hover:bg-[#C5A059] hover:text-black transition-colors shadow-md flex items-center justify-center space-x-2"
-            >
-              {isProcessing ? (
-                <span>DISPATCHING EXECUTIVE CHAUFFEUR...</span>
-              ) : (
-                <>
-                  <Lock className="w-4 h-4 text-[#C5A059]" />
-                  <span>CONFIRM RESERVATION ({getFormattedFare()} USD)</span>
-                </>
-              )}
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+              <button
+                onClick={() => {
+                  setCheckoutOpen(false);
+                  setIsSuccess(false);
+                }}
+                className="w-full sm:w-auto px-6 py-3.5 bg-gray-100 text-black border border-gray-300 font-extrabold text-xs uppercase tracking-wider hover:bg-gray-200 transition-colors"
+              >
+                ← CANCEL & BACK
+              </button>
+              <button
+                disabled={isProcessing}
+                onClick={handleConfirmPayment}
+                className="w-full sm:flex-1 py-3.5 bg-black text-white font-extrabold text-xs uppercase tracking-[0.2em] hover:bg-[#C5A059] hover:text-black transition-colors shadow-md flex items-center justify-center space-x-2"
+              >
+                {isProcessing ? (
+                  <span>DISPATCHING EXECUTIVE CHAUFFEUR...</span>
+                ) : (
+                  <>
+                    <Lock className="w-4 h-4 text-[#C5A059]" />
+                    <span>CONFIRM RESERVATION ({getFormattedFare()} USD)</span>
+                  </>
+                )}
+              </button>
+            </div>
 
             <p className="text-center text-[10px] text-gray-500 font-medium">
               🔒 256-Bit SSL Encrypted • Zero Cancellation Fee up to 2 hours prior to pickup

@@ -16,19 +16,16 @@ export const DigitalSignboardModal: React.FC<DigitalSignboardModalProps> = ({ is
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-3xl bg-[#0E0E12] border border-gold/40 rounded-none shadow-2xl overflow-hidden text-white my-8">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 pt-20 pb-10 bg-black/90 backdrop-blur-md overflow-y-auto">
+      <div className="relative w-full max-w-3xl bg-[#0E0E12] border border-[#C5A059]/40 rounded-none shadow-2xl overflow-hidden text-white my-auto">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gold/20 bg-[#14141A]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#C5A059]/20 bg-[#14141A] sticky top-0 z-10">
           <div className="flex items-center space-x-2">
-            <Monitor className="w-5 h-5 text-gold" />
-            <h3 className="text-sm font-extrabold text-white tracking-[0.2em] uppercase">
+            <Monitor className="w-5 h-5 text-[#C5A059]" />
+            <h3 className="text-xs sm:text-sm font-extrabold text-white tracking-[0.15em] uppercase">
               AIRPORT TERMINAL DIGITAL SIGNBOARD BUILDER
             </h3>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gold transition-colors p-1">
-            <X className="w-5 h-5" />
-          </button>
         </div>
 
         <div className="p-6 space-y-6">

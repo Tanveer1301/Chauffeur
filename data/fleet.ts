@@ -94,7 +94,7 @@ export const EXPERIENCE_PACKAGES: ExperiencePackage[] = [
     vehicle: 'sprinter',
     includedAddons: ['starlinkWifi', 'mineralWater', 'newspapers'],
     highlights: ['Dedicated Chauffeur Lead', 'Multi-Stop Dynamic Routing', 'Consolidated Corporate Billing', 'Starlink 5G Ultra Wi-Fi'],
-    badge: 'MOST POPULAR FOR ENTERPRISE'
+    badge: 'MOST POPULAR'
   },
   {
     id: 'pkg-wedding',
